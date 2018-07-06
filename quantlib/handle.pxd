@@ -11,6 +11,9 @@ cdef extern from 'boost/shared_ptr.hpp' namespace 'boost':
         void reset(T*)
         bool operator bool()
 
+cdef extern from '<boost/make_shared.hpp>' namespace 'boost':
+    shared_ptr[T] make_shared[T](...)
+
 cdef extern from 'boost/pointer_cast.hpp' namespace 'boost':
     shared_ptr[T] static_pointer_cast[T](...)
     shared_ptr[T] dynamic_pointer_cast[T](...)
